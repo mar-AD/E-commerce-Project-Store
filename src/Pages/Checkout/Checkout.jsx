@@ -1,7 +1,7 @@
 
 import React, { useEffect }from 'react';
 import { useCart } from '../../Components/Cart/Cartcontext';
-import './CheckOut.css'
+import './Checkout.css'
 import axios from 'axios';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
