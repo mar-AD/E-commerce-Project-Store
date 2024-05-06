@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import "./card.css"; // Import the CSS file
+import "./Card.css"; // Import the CSS file
 
 function Card({ imagen }) {
   const [show, setShown] = useState(false);
