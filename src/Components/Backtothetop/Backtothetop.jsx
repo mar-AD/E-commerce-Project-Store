@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ExpandLessRoundedIcon from "@mui/icons-material/ExpandLessRounded";
-import "./backtothetop.css";
+import "./Backtothetop.css";
 export default function backtothetop() {
   const [tothetop, settothetop] = useState(false);
 
