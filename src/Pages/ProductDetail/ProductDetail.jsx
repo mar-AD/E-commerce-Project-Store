@@ -9,7 +9,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
 import './ProductDetail.css';
-import { useCart } from '../../Components/cart/cartcontext';
+import { useCart } from '../../Components/Cart/Cartcontext';
 
 const ProductDetail = () => {
 {const { productId } = useParams();

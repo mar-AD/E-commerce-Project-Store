@@ -10,11 +10,11 @@ import Payment from "./Pages/Payment/Payment.jsx";
 import About from "./Pages/About/About.jsx";
 import Terms from "./Pages/Terms/Terms.jsx";
 import PasswordReset from "./Pages/ResetPassword/ResetPassword.jsx";
-import Backtothetop from "./Components/backtothetop/backtothetop.jsx";
+import Backtothetop from "./Components/Backtothetop/Backtothetop.jsx";
 import React, { useContext, useState } from "react";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail.jsx";
-import Checkout from "./Pages/checkout/Checkout.jsx";
-import Profil from "./Pages/Profile/profile.jsx";
+import Checkout from "./Pages/Checkout/Checkout.jsx";
+import Profil from "./Pages/Profile/Profile.jsx";
 
 import { AuthContext } from "./Components/Logincontext/Logincontext.jsx";
 function App() {

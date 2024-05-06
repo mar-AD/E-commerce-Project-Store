@@ -1,11 +1,3 @@
-// const likeIcon = (product) => {
-//   // Check if the product is already liked
-//   if (!likedProducts.includes(product)) {
-//     // Add the product to the likedProducts array
-//     setLikedProducts([...likedProducts, product]);
-//   }
-// };
-// likecontext.jsx
 
 import React, { createContext, useContext, useReducer } from 'react';
 

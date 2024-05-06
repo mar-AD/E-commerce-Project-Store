@@ -1,8 +1,7 @@
 
 import React, { useEffect }from 'react';
-import { useCart } from '../../Components/cart/cartcontext';
+import { useCart } from '../../Components/Cart/Cartcontext';
 import './CheckOut.css'
-import paypal from '../../assets/how-paypa.png';
 import axios from 'axios';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';

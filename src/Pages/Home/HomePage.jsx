@@ -5,7 +5,6 @@ import "./HomePage.css";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import testslide from "../../assets/testslide.png";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import Button from "@mui/material/Button";
 import Carouselprdct from "react-multi-carousel";
 import Carouselreviews from "react-multi-carousel";
@@ -16,30 +15,30 @@ import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRounded";
 
 import "react-multi-carousel/lib/styles.css";
-import { reviewsData } from "./data";
-import firstcategorie from "../../assets/decodeco.png";
-import secondcategorie from "../../assets/artifcollec.jpg";
-import tirthcategorie from "../../assets/accessor.png";
-import fourthcategorie from "../../assets/bookscateg.jpg";
-import image from "../../assets/desinfinal.png";
+import { reviewsData } from "./Data";
+import firstcategorie from "../../Assets/decodeco.png";
+import secondcategorie from "../../Assets/artifcollec.jpg";
+import tirthcategorie from "../../Assets/accessor.png";
+import fourthcategorie from "../../Assets/bookscateg.jpg";
+import image from "../../Assets/desinfinal.png";
 
-import { useCart } from "../../Components/cart/cartcontext";
+import { useCart } from "../../Components/Cart/Cartcontext";
 // import { useLike } from "../../Components/like/likecontext";
 
-import Card from "../../Components/Card/card/mycard";
+import Card from "../../Components/Card/Card/Mycard";
 import Carousel from "../../Components/Card/Carousel";
 
 // Our collection slide********************************************
 
-import camera from "../../assets/camera.png";
-import phone from "../../assets/phone.png";
-import gramo from "../../assets/gramo.png";
-import clocks from "../../assets/clocks.png";
-import radio from "../../assets/radio.png";
-import koora from "../../assets/koora.png";
-import dactylo from "../../assets/dactyloo.png";
-import dactyl from "../../assets/dactylo.png";
-import grp from "../../assets/bg.png";
+import camera from "../../Assets/camera.png";
+import phone from "../../Assets/phone.png";
+import gramo from "../../Assets/gramo.png";
+import clocks from "../../Assets/clocks.png";
+import radio from "../../Assets/radio.png";
+import koora from "../../Assets/koora.png";
+import dactylo from "../../Assets/dactyloo.png";
+import dactyl from "../../Assets/dactylo.png";
+import grp from "../../Assets/bg.png";
 
 //last section *********************************************************
 

@@ -2,14 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import { MdAddShoppingCart } from "react-icons/md";
 import { FaFilter, FaSort } from "react-icons/fa";
 import Button from "@mui/material/Button";
-import { useCart } from "../../Components/cart/cartcontext";
+import { useCart } from "../../Components/Cart/Cartcontext";
 import { useLocation } from "react-router-dom";
-import Navbar from "../../Components/Navbar/Navbar";
-import CancelIcon from "@mui/icons-material/Cancel";
 import "./Shop.css";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
