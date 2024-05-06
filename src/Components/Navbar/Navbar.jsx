@@ -11,7 +11,7 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import image from "../../Assets/LOGOo.png";
+import image from "../../Assets/Logoo.png";
 import { useCart } from "../Cart/Cartcontext";
 import Popover from "@mui/material/Popover";
 import Box from "@mui/material/Box";
