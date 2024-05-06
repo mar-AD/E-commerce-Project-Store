@@ -1,0 +1,46 @@
+/* Card.css */
+
+.cardy {
+  display: flex;
+  /* border: solid; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+  width: 19rem;
+  height: 20rem;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.cardy img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.cardy h2 {
+  margin: 0;
+  margin-top: 1rem;
+}
+
+
+
+@media (max-width: 464px) {
+  /* .cardStyles{
+    width: 10rem;
+  } */
+  
+  .cardy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    width: 15rem;
+    height: 15rem;
+    padding: 0 2rem 2rem 2rem;
+    border-radius: 10px;
+  } 
+
+}

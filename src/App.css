@@ -1,0 +1,22 @@
+:root {
+    --background: #f8e4af;
+    --background1:#590404;
+    --background2: #080708;
+    --background3: white;
+    --background4: white;
+    --background5: #080708;
+    --background6: #590404;
+  }
+  .isLightMode {
+    --background: #590404;
+    --background1:#f8e4af;
+    --background2: white;
+    --background3: #f8e4af;
+    --background4: #000000;
+    --background5: #fdca40;
+    --background6: #080708;
+  }
+
+  *{
+    font-family: 'Poppins', serif !important;
+  }

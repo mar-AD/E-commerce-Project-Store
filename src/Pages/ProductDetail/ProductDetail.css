@@ -1,0 +1,152 @@
+
+.card-details{
+    padding: 8em 40px;
+    width: 100%;
+    font-family: "Poppins", serif;
+}
+.shoppingcard{
+    display: flex;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.proImgg{
+    height: 500px;
+    width: 500px
+}
+.cardbtn{
+    background: #fff;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.cardbtn button{
+    padding: 10px 15px;
+    margin-left: 10px;
+    background: #590404;
+    border-radius: 8px;
+    color: #fff;
+}
+.shoppingcard-details{
+    padding-left: 10px;
+    width: 100%;
+}
+
+.nameSku{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+.payment{
+    padding-bottom: 2rem;
+}
+.cardFooter{
+    display: flex;
+    justify-content: space-between
+}
+.button1{
+    padding: 10px 2rem;
+    width: 85%;
+    background: #590404;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.button2{
+    width: 10%;
+    background: #f9e9c8;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 1030px) {
+    .card-details {
+    padding: 8em 20px; 
+}
+
+.shoppingcard {
+    flex-direction: column; 
+    align-items: center;
+}
+
+.proImgg {
+    height: auto;
+    width: 30%; 
+    margin: 20px 0; 
+}
+
+.shoppingcard-details {
+    padding-left: 0; 
+    padding: 10px;
+    text-align: center; 
+}
+
+.cardFooter {
+    align-items: center;
+    gap: 1rem;
+}
+
+.button1 {
+    width: 100%; 
+    margin-bottom: 10px; 
+}
+.button2 {
+    width: 40%;
+    padding: 12px;
+    margin-bottom: 10px; 
+}
+}
+
+@media only screen and (max-width: 661px) {
+.proImgg {
+    width: 60%; 
+    height: auto; 
+}
+}
+
+
+@media only screen and (max-width: 540px) {
+.nameSku {
+    flex-direction: column; 
+    align-items: center;
+}
+
+.proImgg {
+    width: 80%; 
+    height: auto; 
+    }
+
+.nameSku h1 {
+    order: 2; 
+}
+
+.nameSku p {
+    order: 1; 
+    margin-bottom: 10px; 
+}
+
+.cardFooter {
+    flex-direction: column; 
+    align-items: center;
+    }
+
+    .button1 {
+    width: 100%; 
+    margin-bottom: 10px; 
+    }
+
+    .button2 {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,6 @@
+.scrollup{
+    transition: transform 0.3s ease-in-out;
+}
+.back-to-top:hover{
+  transform: scale(1.2);
+}
