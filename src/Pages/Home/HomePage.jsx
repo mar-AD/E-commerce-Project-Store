@@ -53,6 +53,7 @@ const HomePage = () => {
   const carouselRef = useRef(null);
   const [likedProductIds, setLikedProductIds] = useState([]);
   const [productData, setProductData] = useState([]);
+  const [newProductData, setNewProductData] = useState([]);
   let cards = [
     {
       key: 1,
@@ -83,7 +84,9 @@ const HomePage = () => {
           "https://e-commerce-project-backend-yec6.onrender.com/v1/allproducts/"
         );
         if (response.status === 200) {
-          setProductData(response.data);
+          const randomIndex = Math.floor(Math.random() * response.data.length);
+          const randomProducts = response.data.slice(randomIndex, randomIndex + 10);
+          setProductData(randomProducts);
         } else {
           console.error("Failed to fetch product data");
         }
@@ -94,6 +97,31 @@ const HomePage = () => {
 
     fetchData();
   }, []);
+
+  // for new ARIVALES
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://e-commerce-project-backend-yec6.onrender.com/v1/allproducts/"
+        );
+        if (response.status === 200) {
+          const sortedProducts = response.data.sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+          );
+          const newestProducts = sortedProducts.slice(0, 10);
+          setNewProductData(newestProducts);
+        } else {
+          console.error("Failed to fetch product data");
+        }
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
 
   const addToCart = (product) => {
     const isProductInCart = cart.some(
@@ -130,6 +158,67 @@ const HomePage = () => {
   };
 
   const product = productData.map((item) => (
+    <div className="cardd" key={item._id} >
+      <div className="likes-iconn" onClick={() => handleFavorite(item)}>
+        {likedProductIds.includes(item._id) ? (
+          <FavoriteRoundedIcon />
+        ) : (
+          <FavoriteBorderRoundedIcon />
+        )}
+      </div>
+      <div className="imageprdctss">
+        <img
+          className="product--imagee"
+          src={item.product_image}
+          alt="product image"
+          onClick={() => navigateToProductDetail(item._id)}
+        />
+      </div>
+      <div className="cart-textt">
+        <span
+          className="prdctnamee"
+          onClick={() => navigateToProductDetail(item._id)}
+        >
+          {item.product_name}
+        </span>
+        <p
+          className="desc_ellipsis"
+          onClick={() => navigateToProductDetail(item._id)}
+        >
+          {item.short_description}
+        </p>
+        <div className="pricee">
+          <div
+            className="realprice"
+            onClick={() => navigateToProductDetail(item._id)}
+          >
+            ${item.price}
+          </div>
+          <div className="addbuttonn">
+            <Button
+              style={{
+                borderRadius: 8,
+                outline: 0,
+                padding: 5,
+                backgroundColor: "#590404",
+                color: "#fff",
+                textAlign: "center",
+                cursor: "pointer",
+                fontSize: 14,
+              }}
+              onClick={() => addToCart(item)}
+            >
+              <AddShoppingCartRoundedIcon />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  ));
+
+
+  //FOR NEW ARIVALS 
+  const newProducts = newProductData.map((item) => (
     <div className="cardd" key={item._id} >
       <div className="likes-iconn" onClick={() => handleFavorite(item)}>
         {likedProductIds.includes(item._id) ? (
@@ -446,7 +535,7 @@ const HomePage = () => {
           slidesToSlide={1}
           swipeable
         >
-          {product}
+          {newProducts}
         </Carouselprdct>
       </div>
 
