@@ -5,7 +5,7 @@ import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 
 
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from "react-toastify";
 import './ProductDetail.css';
@@ -19,6 +19,12 @@ const { likedProducts, dispatch } = useCart();
 const [product, setProduct] = useState(null);
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
+const location = useLocation()
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
 
 useEffect(() => {
 const fetchProduct = async () => {
@@ -26,7 +32,6 @@ const fetchProduct = async () => {
     const response = await axios.get(`https://e-commerce-project-backend-yec6.onrender.com/v1/products/${productId}`);
     setProduct(response.data[0]);
     } catch (error) {
-    console.error('Error fetching product details:', error);
     setError('Error loading product details. Please try again later.');
     } finally {
     setLoading(false);
@@ -44,8 +49,8 @@ const handleCreateOrder = async () => {
             'https://e-commerce-project-backend-yec6.onrender.com/v1/orders',
             {
                 customerId: localStorage.getItem('customerId'),
-                orderItems: [product], // Pass the single product as an array
-                cartTotalPrice: product.price + shippingPrice, // Use the product price as the total price
+                orderItems: [product],
+                cartTotalPrice: product.price + shippingPrice,
             },
             {
                 headers: {
@@ -54,7 +59,6 @@ const handleCreateOrder = async () => {
             }
         );
         toast.success('Order placed successfully');
-        console.log(response.data);
     } catch (error) {
         toast.error('Error creating order');
         console.error('Error creating order:', error.response ? error.response.data : error.message);
@@ -62,7 +66,6 @@ const handleCreateOrder = async () => {
 };
 
 const handleBuyNow = () => {
-    // Call handleCreateOrder function when Buy Now button is clicked
     handleCreateOrder();
 };
 
@@ -87,6 +90,7 @@ return <div>{error}</div>;
 if (!product) {
 return <div>No product data available</div>;
 }
+
 
 return (
 <div className='card-details'>

@@ -41,7 +41,6 @@ const Checkout = () => {
         toast.success('Order placed successfully');
     } catch (error) {
         toast.error('Error creating order');
-        console.error('Error creating order:', error.response ? error.response.data : error.message);
     }
     };
     const location = useLocation()

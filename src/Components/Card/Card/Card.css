@@ -2,7 +2,6 @@
 
 .cardy {
   display: flex;
-  /* border: solid; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -24,13 +23,7 @@
   margin-top: 1rem;
 }
 
-
-
 @media (max-width: 464px) {
-  /* .cardStyles{
-    width: 10rem;
-  } */
-  
   .cardy {
     display: flex;
     flex-direction: column;

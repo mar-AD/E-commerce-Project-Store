@@ -23,7 +23,6 @@ import fourthcategorie from "../../Assets/bookscateg.jpg";
 import image from "../../Assets/desinfinal.png";
 
 import { useCart } from "../../Components/Cart/Cartcontext";
-// import { useLike } from "../../Components/like/likecontext";
 
 import Card from "../../Components/Card/Card/Mycard";
 import Carousel from "../../Components/Card/Carousel";
@@ -48,7 +47,6 @@ import MonetizationOnRoundedIcon from "@mui/icons-material/MonetizationOnRounded
 import DiscountRoundedIcon from "@mui/icons-material/DiscountRounded";
 
 const HomePage = () => {
-  // const { dispatch: cartDispatch } = useCart();
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
   const { cart, likedProducts, dispatch } = useCart();
@@ -132,7 +130,7 @@ const HomePage = () => {
   };
 
   const product = productData.map((item) => (
-    <div className="cardd" key={item._id}>
+    <div className="cardd" key={item._id} >
       <div className="likes-iconn" onClick={() => handleFavorite(item)}>
         {likedProductIds.includes(item._id) ? (
           <FavoriteRoundedIcon />
@@ -145,6 +143,7 @@ const HomePage = () => {
           className="product--imagee"
           src={item.product_image}
           alt="product image"
+          onClick={() => navigateToProductDetail(item._id)}
         />
       </div>
       <div className="cart-textt">
@@ -275,6 +274,7 @@ const HomePage = () => {
   const handlePrevious = () => {
     carouselRef.current.previous();
   };
+
 
   const location = useLocation()
 

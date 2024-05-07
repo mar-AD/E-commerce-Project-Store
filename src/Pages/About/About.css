@@ -1,6 +1,5 @@
 .about-us-container{
     padding: 8em 40px;
-    /* height: 100vh; */
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -30,11 +29,6 @@
   .center-justify {
     text-align: center;
   }
-/* Default styles for larger screens */
-/* .about-us-container {
-    width: 80%;
-    margin: 0 auto;
-  } */
   
   /* Media query for smaller screens, adjust as needed */
   @media screen and (max-width: 768px) {

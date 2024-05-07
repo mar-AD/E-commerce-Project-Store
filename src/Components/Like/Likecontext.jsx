@@ -4,12 +4,10 @@ import React, { createContext, useContext, useReducer } from 'react';
 const LikeContext = createContext();
 
 const likeReducer = (state, action) => {
-  // Your reducer logic here
   switch (action.type) {
     case 'ADD_TO_LIKES':
       // Handle adding to liked items
       return { ...state, likedItems: [...state.likedItems, action.payload] };
-    // Other cases...
     default:
       return state;
   }

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import "./Card.css"; // Import the CSS file
+import "./Card.css"; 
 
 function Card({ imagen }) {
   const [show, setShown] = useState(false);
@@ -16,7 +16,7 @@ function Card({ imagen }) {
 
   return (
     <animated.div
-      className="cardy" // Add the CSS class here
+      className="cardy"
       style={{ ...props3 }}
       onMouseEnter={() => setShown(true)}
       onMouseLeave={() => setShown(false)}

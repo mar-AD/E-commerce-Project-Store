@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-// import { ClipLoader } from "react-spinners";
 import './ResetPassword.css'
 import Button from '@mui/material/Button'
 function PasswordResetProcess() {
@@ -21,7 +20,6 @@ function PasswordResetProcess() {
     const verifyToken = async () => {
         try { 
             const response = await axios.get(`https://e-commerce-project-backend-yec6.onrender.com/v1/customers/password/reset/verify/${token}`);
-            // toast.success(response.data.message);
             setIsValidToken(true);
         } catch (error) {
             toast.error('Token verification failed:', error);
@@ -109,11 +107,6 @@ function PasswordResetProcess() {
                     style={{
                         backgroundColor: '#590404',
                         color: '#fff',
-                        // marginTop: '18px',
-                        // padding: '12px 20px',
-                        // fontSize: '18px',
-                        // border: 'none',
-                        // borderRadius: '15px',
                         cursor: 'pointer',
                     }}
                 >

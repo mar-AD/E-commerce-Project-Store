@@ -9,8 +9,8 @@ export default function Carroussel(props) {
 
   const [offsetRadius, setOffsetRadius] = useState(2);
   const [showArrows, setShowArrows] = useState(false);
-  const [goToSlide, setGoToSlide] = useState(0); // Initial slide index is set to 0
-  const [autoplay, setAutoplay] = useState(true); // Autoplay state
+  const [goToSlide, setGoToSlide] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
   const [cards] = useState(table);
 
   useEffect(() => {
@@ -26,14 +26,14 @@ export default function Carroussel(props) {
       }
     }, 2000);
     return () => {
-      clearInterval(interval); // Cleanup the interval on component unmount
+      clearInterval(interval);
     };
   }, [autoplay, props.cards.length]);
 
   return (
     <div
-    onMouseEnter={() => setAutoplay(false)} // Pause on hover
-      onMouseLeave={() => setAutoplay(true)}  // Resume on mouse leave
+    onMouseEnter={() => setAutoplay(false)}
+      onMouseLeave={() => setAutoplay(true)}
       style={{ width: props.width, height: props.height, margin: props.margin }}
     >
       <Carousel

@@ -1,31 +1,17 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&family=Ribeye&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"); */
 
 body {
   position: relative; 
 }
 /* WAVES ******************/
 .wavesfooter {
-  /* border: solid; */
-  /* top: 0; */
   left: 0;
   position: absolute;
-  /* position:relative; */
   width: 100%;
   height: 15vh;
   margin-top: -100px;
   min-height: 100px;
   max-height: 150px;
-  /* transform: rotate(180deg); */
 }
-
-/* .content {
-	position: relative;
-	height: 20vh;
-	text-align: center;
-	background-color: rgb(89, 5, 5);
-  } */
-
 /* Animation */
 
 .parallaxfooter > use {
@@ -71,28 +57,11 @@ body {
 .copyrights p {
   margin: 0;
 }
-/* section {
-  width: 100%;
-  display: inline-block;
-  background: #333;
-  height: 50vh;
-  border: solid;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: underline;
-} */
 
-/* .footery{
-  position: fixed;
-  bottom: 0;
-} */
 .footer-distributed {
-  /* margin-top: 5em; */
   background: #590404;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
-  /* border: solid; */
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
@@ -114,8 +83,6 @@ body {
 .footer-left img {
   width: 80%;
 }
-/* The company logo */
-
 
 /* Footer links */
 
@@ -159,10 +126,6 @@ body {
   vertical-align: middle;
 }
 
-/* .footer-distributed .footer-center i.fa-envelope {
-  font-size: 17px;
-  line-height: 38px;
-} */
 
 .footer-distributed .footer-center p {
   display: inline-block;
@@ -230,9 +193,35 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 .social-icons:hover{
-  /* font-size: 60px; */
   transform: scale(1.2);
 }
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(title);
+  position: absolute;
+  background-color: #f8e4af;
+  color: #333;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 
 @media (max-width: 880px) {
@@ -256,3 +245,4 @@ body {
     width: 100%;
   }
 }
+

@@ -1,4 +1,3 @@
-// import Styles from "./button.css";
 
 const buttonStyles = {
   backgroundColor: "#0094ff",

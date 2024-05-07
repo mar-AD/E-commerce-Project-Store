@@ -29,7 +29,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = ({ onSearchChange }) => {
   const location = useLocation();
-  console.log(location.pathname);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActivatedItem] = useState("");
@@ -209,17 +208,14 @@ const Navbar = ({ onSearchChange }) => {
             }
           );
           const { access_token, refresh_token } = response.data;
-          console.log(response.data);
           authCtx.login(access_token, refresh_token);
           const decoded = decodeJwt(access_token);
-          console.log(decoded);
           const customerid = decoded.customerid;
           localStorage.setItem("customerId", customerid);
           navigate("/");
           toast.success('logged in successfully');
 
         } catch (error) {
-          console.error("Login failed:", error);
           if (
             error.response &&
             error.response.data &&
@@ -234,7 +230,6 @@ const Navbar = ({ onSearchChange }) => {
             toast.error("An error occurred during login");
           }
         }finally {
-          // Close the popover after submitting the form
           AccountPopoverClose();
         }
       } else {
@@ -244,7 +239,6 @@ const Navbar = ({ onSearchChange }) => {
             "https://e-commerce-project-backend-yec6.onrender.com/v1/customers",
             formData
           );
-          console.log(response);
           toast.success(
             response.data,
             "Check your Email to activate your account."
@@ -575,7 +569,6 @@ const Navbar = ({ onSearchChange }) => {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "flex-end",
-                        // border: "solid",
                       }}
                     >
                       <div>
@@ -614,7 +607,6 @@ const Navbar = ({ onSearchChange }) => {
       </div>    
     </nav>
     <ToastContainer />
-     
     </>
   );
 };

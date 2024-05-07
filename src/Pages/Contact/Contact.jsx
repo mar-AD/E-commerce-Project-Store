@@ -70,7 +70,6 @@ const Contact = () => {
           <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
             Happy shopping! <img style={{ width: "24px" }} src={happy} alt="" />
           </div>
-        {/* <img src="src/assets/sergey.jpg" alt="" /> */}
       </div>
       <div className="contact-form">
         <form className="forma" onSubmit={handleSubmit}>

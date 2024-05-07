@@ -6,7 +6,6 @@ import HomePage from "./Pages/Home/HomePage.jsx";
 import Shop from "./Pages/Shop/Shop.jsx";
 import Contact from "./Pages/Contact/Contact.jsx";
 import Favorites from "./Pages/Favorites/Favorites";
-import Payment from "./Pages/Payment/Payment.jsx";
 import About from "./Pages/About/About.jsx";
 import Terms from "./Pages/Terms/Terms.jsx";
 import PasswordReset from "./Pages/ResetPassword/ResetPassword.jsx";
@@ -34,7 +33,6 @@ function App() {
           <Route path="/Home" element={<HomePage />} />
           <Route path="/shop" element={<Shop searchQuery={searchQuery} />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Payment" element={<Payment />} />
           <Route path="/About" element={<About />} />
           <Route path="/Terms" element={<Terms />} />
           <Route path="/reset-password/:token" element={<PasswordReset />} />
@@ -43,7 +41,6 @@ function App() {
           <>
             <Route path="*" element={<HomePage />} />
 
-            {/* <Route path="/Favorites" element={<HomePage />} /> */}
           </>
         ) : (
           <>

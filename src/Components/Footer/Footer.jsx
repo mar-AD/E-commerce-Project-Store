@@ -80,9 +80,15 @@ const Footer = () => {
           <div>
             <LocationOnIcon className="footer-icon" />
             <p>
-              <span style={{ cursor: "pointer" }} onClick={handleMapClick}>
-                Boulevard Ghandi, Rond Point Oulmes
-              </span>{" "}
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={handleMapClick}
+              title="Click to see where on the map"
+              className="tooltip"
+            >
+              Boulevard Ghandi, Rond Point Oulmes
+            </span>{" "}
+
               Casablanca 20026
             </p>
           </div>

@@ -4,27 +4,21 @@
     align-items: center;
     padding: 8em 40px;
     min-height: 100vh;
-    /* width: 100%; */
-    /* margin-bottom: -10%; */
     gap: 40px;
-    /* border: solid; */
 }
 .pic{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    /* border: solid ; */
     width: 50%;
     height: 100%;
 }
 
 .pic p {
-    /* border: solid; */
     text-align: justify;
   }
 .contact-form {
-    /* border: solid; */
     height: 100%;
     width: 50%;
     display: flex;
@@ -38,7 +32,6 @@
   .contacttitle{
     font-size: 35px;
     text-align: start;
-    /* border: solid; */
   }
   
   .forma {
@@ -60,21 +53,14 @@
     padding: 8em 20px;
     min-height: 100vh;
     width: 100%;
-    /* margin-bottom: -10%; */
     gap: 40px;
-    /* border: solid; */
 }
 .pic{
   width: 100%;
 }
 .contact-form {
-  /* border: solid; */
   height: 100%;
   width: 100%;
   display: flex;
 }
 }
-/* 
-@media only screen and (max-width: 1315px) {
-
-} */

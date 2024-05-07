@@ -4,7 +4,6 @@ import axios from "axios";
 export const AuthContext = createContext({
   token: "",
   refToken: "",
-  // decodedToken: null,
   customerImage: null,
   login: (access, refresh) => {},
   logout: () => {},
@@ -14,7 +13,6 @@ export const AuthContext = createContext({
 export const AuthProvider = ({ children }) => {
   const [authToken, setAuthToken] = useState(localStorage.getItem("token") || null);
   const [refToken, setRefToken] = useState(localStorage.getItem("refreshToken") || null);
-  // const [decodedToken, setDecodedToken] = useState(null);
   const [customerImage, setCustomerImage] = useState(null);
 
   const loginHandler = (access, refresh) => {
@@ -48,7 +46,6 @@ export const AuthProvider = ({ children }) => {
             },
           };
           const response = await axios.post("https://e-commerce-project-backend-yec6.onrender.com/v1/customers/refresh/token", {}, config);
-          console.log("Refresh Token Response:", response.data);
           const { access_token } = response.data;
           setAuthToken(access_token);
           localStorage.setItem("token", access_token);
@@ -58,7 +55,6 @@ export const AuthProvider = ({ children }) => {
         }
       }
     } catch (error) {
-      console.error("Error refreshing token:", error);
       logoutHandler();
     }
   };
@@ -67,17 +63,14 @@ export const AuthProvider = ({ children }) => {
     const checkAuthentication = async () => {
       if (authToken) {
         const decoded = decodeJwt(authToken);
-        console.log("Decoded Token:", decoded); // Log the decoded token
         const currentTime = Date.now() / 1000;
         if (decoded.exp && currentTime > decoded.exp) {
           await refreshAccessToken();
         } else {
-          // setDecodedToken(decoded);
           loginHandler(authToken, refToken);
           const storedCustomerid = localStorage.getItem("customerId");
           try {
             const response = await axios.get(`https://e-commerce-project-backend-yec6.onrender.com/v1/customers/${storedCustomerid}`);
-            console.log("Customer Data:", response.data); // Log the customer data
             const customerData = response.data;
             setCustomerImage(customerData.customer_image || null);
           } catch (error) {
@@ -97,7 +90,6 @@ export const AuthProvider = ({ children }) => {
       value={{
         token: authToken,
         refresh: refToken,
-        // decodedToken: decodedToken,
         customerImage: customerImage,
         login: loginHandler,
         logout: logoutHandler,
