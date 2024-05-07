@@ -32,7 +32,6 @@ const Navbar = ({ onSearchChange }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActivatedItem] = useState("");
-
   const authCtx = useContext(AuthContext);
 
   const [checkout, setCheckout] = useState([]);
@@ -104,7 +103,6 @@ const Navbar = ({ onSearchChange }) => {
 
   const open = Boolean(anchorEl);
   const Accountopen = Boolean(anchortwoEl);
-
 
   useEffect(() => {
     const currentPage =
@@ -278,86 +276,80 @@ const Navbar = ({ onSearchChange }) => {
     setIsLogin((prevIsLogin) => !prevIsLogin);
   };
 
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false); // Close the burger menu
+  };
+
   return (
     <>
-    <nav className={`navbaaar ${scrolled ? "scrolled" : ""}`}>
-      <div className="navleft">
-        <div
-          className={`burger-menu ${isMenuOpen ? "show" : ""}`}
-          onClick={toggleMenu}
-        >
-          <MenuRoundedIcon style={{ fontSize: "2em" }} />
-        </div>
-        <div className="title">
-          <Link to="/">
-            <img src={image} alt="" />
-          </Link>
-        </div>
-        <div>
-          <ul className={`menu ${isMenuOpen ? "show" : ""}`}>
-            <div className="close">
-              <CloseRoundedIcon
-                onClick={closeMenu}
-                style={{ fontSize: "2em" }}
-              />
-            </div>
-            {/* khassu link mazal */}
-            <div className="logo">
-              <Link exact to="/Home">
-                <img src={image} alt="" />
-              </Link>
-            </div>
-            <li
-              className={`navItem ${
-                activeItem === "Home" || activeItem === "/" ? "active" : ""
-              }`}
-            >
-              <NavLink
-                exact
-                to="/Home"
-                activeClassName
-                className="active-link"
-                onClick={() => activeItemClick("Home")}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className={`navItem ${activeItem === "Shop" ? "active" : ""}`}>
-              <NavLink
-                to="/Shop"
-                className="active-link"
-                onClick={() => activeItemClick("Shop")}
-              >
-                Shop
-              </NavLink>
-            </li>
-            <li
-              className={`navItem ${activeItem === "Contact" ? "active" : ""}`}
-            >
-              <NavLink
-                to="/Contact"
-                className="active-link"
-                onClick={() => activeItemClick("Contact")}
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li className="searchrespo">
-              <div className="search-responsive">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="search-responsive-input"
-                  value={searchQuery}
-                  onChange={handleSearchChange}
-                />
-                <SearchIcon className="search-responsive-icon" />
+      <nav className={`navbaaar ${scrolled ? "scrolled" : ""}`}>
+        <div className="navleft">
+          <div
+            className={`burger-menu ${isMenuOpen ? "show" : ""}`}
+            onClick={toggleMenu}
+          >
+            <MenuRoundedIcon style={{ fontSize: "2em" }} />
+          </div>
+          <div className="title">
+            <Link to="/">
+              <img src={image} alt="" />
+            </Link>
+          </div>
+          <div>
+            <ul className={`menu ${isMenuOpen ? "show" : ""}`}>
+              <div className="close">
+                <CloseRoundedIcon onClick={closeMenu} style={{ fontSize: "2em" }} />
               </div>
-            </li>
-          </ul>
+              <div className="logo">
+                <Link exact to="/Home">
+                  <img src={image} alt="" />
+                </Link>
+              </div>
+              <li className={`navItem ${activeItem === "Home" || activeItem === "/" ? "active" : ""}`}>
+                <NavLink
+                  exact
+                  to="/Home"
+                  activeClassName
+                  className="active-link"
+                  onClick={() => { activeItemClick("Home"); handleMenuItemClick(); }}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className={`navItem ${activeItem === "Shop" ? "active" : ""}`}>
+                <NavLink
+                  to="/Shop"
+                  className="active-link"
+                  onClick={() => { activeItemClick("Shop"); handleMenuItemClick(); }}
+                >
+                  Shop
+                </NavLink>
+              </li>
+              <li className={`navItem ${activeItem === "Contact" ? "active" : ""}`}>
+                <NavLink
+                  to="/Contact"
+                  className="active-link"
+                  onClick={() => { activeItemClick("Contact"); handleMenuItemClick(); }}
+                >
+                  Contact
+                </NavLink>
+              </li>
+              <li className="searchrespo">
+                <div className="search-responsive">
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    className="search-responsive-input"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                  />
+                  <SearchIcon className="search-responsive-icon" />
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div className="navright">
+        <div className="navright">
         <div className="search">
           <input
             className="search-input"
@@ -603,12 +595,13 @@ const Navbar = ({ onSearchChange }) => {
               </Button>
             </Box>
           </Popover>
+        </div>   
         </div>
-      </div>    
-    </nav>
-    <ToastContainer />
+      </nav>
+      <ToastContainer />
     </>
   );
 };
 
 export default Navbar;
+
