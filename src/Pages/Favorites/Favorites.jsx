@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import './Favorites.css';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Favorites = () => {
   const [likedProducts, setLikedProducts] = useState([]);
@@ -48,6 +48,12 @@ const Favorites = () => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  const navigate = useNavigate();
+
+  const navigateToProductDetail = (productId) => {
+    navigate(`/product/${productId}`);
+  };
+
   return (
     <div className='favoritepage'>
       <span className='span'>Favorites</span>
@@ -59,12 +65,12 @@ const Favorites = () => {
         {likedProducts.map((likedProduct, index) => (
           <div key={index} className='card'>
             <div className="imageprdcts">
-              <img className="product--image" src={likedProduct.product_image} alt="product image" />
+              <img className="product--image" src={likedProduct.product_image} alt="product image" onClick={() => navigateToProductDetail(likedProduct._id)} />
             </div>
-            <div className="cart-text">
-              <span className="prdctname">{likedProduct.product_name}</span>
-              <p className="ellipsis">{likedProduct.short_description}</p>
-              <p className="price">
+            <div className="cart-text" >
+              <span className="prdctname" onClick={() => navigateToProductDetail(likedProduct._id)}>{likedProduct.product_name}</span>
+              <p className="ellipsis" onClick={() => navigateToProductDetail(likedProduct._id)}>{likedProduct.short_description}</p>
+              <p className="price" onClick={() => navigateToProductDetail(likedProduct._id)}>
                 <span style={{ fontSize: "1.5em", color:'#590404' }}>${Math.floor(likedProduct.price)}</span>
                 <span style={{ fontSize: "1em"}}>.{Math.floor((likedProduct.price % 1) * 100)}</span>
               </p>
