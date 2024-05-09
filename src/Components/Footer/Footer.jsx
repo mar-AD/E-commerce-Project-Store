@@ -171,7 +171,7 @@ const Footer = () => {
       </footer>
 
       <div className="copyrights">
-        <p>&copy; {Year()} Your Company Name. All rights reserved.</p>
+        <p>&copy; {Year()} Oldy Goldy House. All rights reserved.</p>
       </div>
     </div>
   );
