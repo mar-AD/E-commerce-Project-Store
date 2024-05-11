@@ -653,7 +653,7 @@ const HomePage = () => {
             draggable
             focusOnSelect={false}
             infinite={false}
-            itemClass=""
+            itemClass="reviwshit"
             keyBoardControl
             minimumTouchDrag={80}
             renderButtonGroupOutside
@@ -665,12 +665,12 @@ const HomePage = () => {
                 slidesToSlide: 2,
               },
               desktop: {
-                breakpoint: { max: 1500, min: 800 },
-                items: 2,
+                breakpoint: { max: 1700, min: 800 },
+                items: 3,
                 partialVisibilityGutter: 60,
               },
               tablet: {
-                breakpoint: { max: 800, min: 600 },
+                breakpoint: { max: 1550, min: 600 },
                 items: 2,
               },
               mobile: {

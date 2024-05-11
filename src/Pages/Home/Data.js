@@ -28,4 +28,12 @@
     "description": "Simple ordering process and fast shipping. Happy customer!",
     "rating": 4
   },
+
+  {
+    "id": 5,
+    "image": "https://images.unsplash.com/photo-1555888997-03e986fc157b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "name": "David Thompson",
+    "description": "Just wanted to say thanks for the amazing shopping experience!",
+    "rating": 4
+  },
 ]

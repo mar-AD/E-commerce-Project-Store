@@ -1024,6 +1024,17 @@ body::-webkit-scrollbar-button {
   }
 }
 
+@media screen and (min-width: 1698px){
+  .caroureviews {
+    align-self: center;
+    width: 90%;
+}
+.cardreviews{
+  margin-right: 10px;
+  width: 1000px;
+}
+}
+
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
 
   
@@ -1226,6 +1237,7 @@ body::-webkit-scrollbar-button {
   }
 
   /* reviews *******************************/
+  
   .reviewsection {
     display: flex;
     flex-direction: column;
