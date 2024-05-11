@@ -52,8 +52,8 @@ const Checkout = () => {
     return (
         <div className='checkout-page'>
             <div className="desc-product">
-        {cart.length === 0 ? (
-            <p>Your cart is empty.</p>
+            {cart.length === 0 ? (
+            <p style={{textAlign:'center'}}>Your cart is empty.</p>
             ) : (
             <div>
                 <ul>
